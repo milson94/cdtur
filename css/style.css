@@ -1,3 +1,30 @@
+/* --- CSS Variables for Theming --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --heading-color: #0c2c4d;
+    --bg-light: #f8f9fa;
+    --border-color: #e0e8f0;
+    --footer-bg: #0c2c4d;
+    --footer-text: #fff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+    --btn-primary-bg: #3d8fcc;
+    --btn-primary-border: #3d8fcc;
+    --btn-primary-hover-bg: #337ab7;
+    --btn-primary-hover-border: #337ab7;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ccc;
+    --heading-color: #5da8df;
+    --bg-light: #2c2c2c;
+    --border-color: #444;
+    --footer-bg: #111;
+    --footer-text: #ccc;
+    --shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 /* --- Reset and Basic Setup --- */
 * {
     margin: 0;
@@ -8,12 +35,14 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Lora', serif;
-    color: #0c2c4d;
+    color: var(--heading-color);
 }
 
 a {
@@ -21,34 +50,24 @@ a {
     color: inherit;
 }
 
-ul {
-    list-style: none;
-}
+ul { list-style: none; }
 
 .content-section {
     padding: 80px 5%;
+    transition: background-color 0.3s;
 }
 
-.bg-light {
-    background-color: #f8f9fa;
-}
+.bg-light { background-color: var(--bg-light); }
 
-.section-intro {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    text-align: center;
-    font-size: 1.1em;
-}
-
-
-/* --- Header and Navigation --- */
+/* --- Header, Navigation & Theme Toggle --- */
 .main-header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
     padding: 15px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .main-nav {
@@ -57,11 +76,10 @@ ul {
     align-items: center;
 }
 
-.logo-text {
-    font-family: 'Lora', serif;
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #0c2c4d;
+.logo .logo-img {
+    height: 50px; /* UPDATED: Logo is now bigger */
+    width: auto;
+    display: block;
 }
 
 .nav-links li {
@@ -77,9 +95,22 @@ ul {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #3d8fcc;
+.nav-links a:hover { color: #3d8fcc; }
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--heading-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 5px;
+    line-height: 1;
 }
+.theme-toggle-btn .fa-sun { display: none; }
+.theme-toggle-btn .fa-moon { display: block; }
+body.dark-mode .theme-toggle-btn .fa-sun { display: block; }
+body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
+
 
 /* --- Buttons --- */
 .btn {
@@ -95,329 +126,128 @@ ul {
 }
 
 .btn-primary {
-    background-color: #3d8fcc;
-    border-color: #3d8fcc;
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-border);
     color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #337ab7;
-    border-color: #337ab7;
+    background-color: var(--btn-primary-hover-bg);
+    border-color: var(--btn-primary-hover-border);
 }
 
-.btn-secondary {
-    border-color: #fff;
-    color: #fff;
-}
-
-.btn-secondary:hover {
-    background-color: #fff;
-    color: #0c2c4d;
-}
-
-.btn-secondary-dark {
-     border-color: #0c2c4d;
-    color: #0c2c4d;
-    background: #fff;
-}
-.btn-secondary-dark:hover {
-    background-color: #0c2c4d;
-    color: #fff;
-}
-
-
-/* --- Hero Section --- */
-.hero {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/hero/hero-background.jpg') no-repeat center center/cover;
-}
-
-.hero-content h1 {
-    font-size: 4.5em;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.hero-content p {
-    font-size: 1.8em;
-    font-family: 'Lora', serif;
-    margin-bottom: 30px;
-}
-
-.hero-buttons .btn {
-    margin: 0 10px;
-}
-
-/* --- About Section --- */
-.about-content {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-}
-
-.about-text {
-    flex: 1;
-}
-.about-text h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-.about-text p, .about-text ul {
-    margin-bottom: 20px;
-}
-.about-text ul li {
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.about-images {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-.about-images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-.about-images img:first-child {
-    grid-row: span 2;
-    height: 100%;
-}
-
-
-/* --- Members Section --- */
-.members-section h2, .food-menu-section h2, .blog-section h2 {
-    text-align: center;
-    font-size: 2.8em;
-    margin-bottom: 20px;
-}
-.members-cards, .blog-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-.card {
-    background: #fff;
-    border: 1px solid #e0e8f0;
-    text-align: center;
-    padding-bottom: 20px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.card h3 {
-    font-size: 1.5em;
-    margin: 20px 0 10px;
-}
-.card p {
-    padding: 0 20px;
-    margin-bottom: 10px;
-}
-.card ul {
-    text-align: left;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-.card ul li {
-    margin-bottom: 5px;
-}
-
-/* --- Highlights Section --- */
-.highlights-section {
-    padding: 0; /* No padding for full-width grid */
-}
-.highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 300px);
-}
-.highlight-item {
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    position: relative;
-}
-.highlight-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-}
-.highlight-content {
-    position: relative;
-    z-index: 2;
-}
-.highlight-item.large-item {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-.highlight-item.small-item {
-    grid-column: span 2;
-}
-.highlight-content h3 { color: #fff; font-size: 1.8em; }
-.highlight-content h4 { color: #fff; font-size: 1em; text-transform: uppercase; }
-.highlight-content .btn { margin-top: 15px; }
-
-/* --- Food Menu Section --- */
-.food-menu-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-}
-.menu-column h3 {
-    font-size: 1.8em;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #0c2c4d;
-    margin-bottom: 20px;
-}
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 15px;
-}
-.menu-item h4 {
-    font-size: 1.2em;
-}
-.menu-item .price {
-    font-weight: 700;
-    color: #0c2c4d;
-}
-.menu-column p {
-    font-style: italic;
-    color: #666;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 15px;
-}
-
-/* --- Blog Section --- */
-.blog-card {
-    background: #fff;
-    border: 1px solid #e0e8f0;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.blog-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-.blog-card-content {
-    padding: 20px;
-}
-.blog-card-content span {
-    display: inline-block;
-    background: #0c2c4d;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 0.8em;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    text-transform: uppercase;
-}
-.blog-card-content h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-/* --- Footer --- */
-.main-footer {
-    background: #0c2c4d;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-}
-.social-links {
-    margin-top: 15px;
-}
-.social-links a {
-    margin: 0 10px;
-    font-weight: 700;
-}
-
-/* --- Other Pages (Sobre, Contacto) --- */
+/* --- Page Title --- */
 .page-title-section {
-    background: #0c2c4d;
+    background: var(--heading-color);
     color: #fff;
     text-align: center;
     padding: 60px 20px;
+    transition: background-color 0.3s;
 }
-.page-title-section h1 {
+.page-title-section h1 { color: #fff; font-size: 3em; }
+
+/* --- NEW "Quem Somos" Intro Section --- */
+.about-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.about-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about-intro-title {
+    background-color: var(--heading-color);
     color: #fff;
-    font-size: 3em;
+    padding: 10px 30px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 1.5em;
 }
-.contact-layout {
-    display: flex;
-    gap: 40px;
+.about-intro p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 1em;
+    color: var(--text-color);
 }
-.contact-form-container, .contact-details {
-    flex: 1;
-}
-.form-group {
-    margin-bottom: 20px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.contact-details p {
-    margin-bottom: 20px;
-}
-.map-container {
-    margin-top: 20px;
-    border-radius: 5px;
-    overflow: hidden;
+.about-intro p:last-child {
+    margin-bottom: 0;
 }
 
-/* --- Responsiveness --- */
+
+/* --- ORGANIZED GALLERY --- */
+.gallery-title {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.gallery-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 50px;
+}
+body.dark-mode .gallery-caption { color: #aaa; }
+
+.image-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    display: block;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* --- Other Pages (Sobre, Contato) --- */
+.contact-layout { display: flex; gap: 40px; }
+.contact-form-container, .contact-details { flex: 1; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 700; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+.contact-details p { margin-bottom: 20px; }
+.map-container { margin-top: 20px; border-radius: 5px; overflow: hidden; }
+
+/* --- Footer --- */
+.main-footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 40px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.social-links { margin-top: 15px; }
+.social-links a { margin: 0 10px; font-weight: 700; }
+
+/* --- Responsiveness for smaller devices --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Simple hiding for mobile. JS needed for hamburger. */
-    }
-    .hero-content h1 {
-        font-size: 2.8em;
-    }
-    .hero-content p {
-        font-size: 1.2em;
-    }
-    .about-content {
-        flex-direction: column;
-    }
-    .highlights-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    .highlight-item.large-item, .highlight-item.small-item {
-        grid-column: span 1;
-        min-height: 300px;
-    }
-    .contact-layout {
-        flex-direction: column;
-    }
+    .nav-links { display: none; }
+    .contact-layout { flex-direction: column; }
+    .image-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;}
 }

@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós - CDTUR</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header class="main-header">
         <nav class="main-nav">
             <a href="index.html" class="logo">
-                <span class="logo-text">CDTUR</span>
+                <img src="assets/gallery/logo.png" alt="CDTUR Logo" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="index.html#members">Membros</a></li>
                 <li><a href="contacto.html">Contactos</a></li>
             </ul>
+             <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
@@ -56,6 +64,7 @@
         </div>
     </footer>
 
+    <!-- Your Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

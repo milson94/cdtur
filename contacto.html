@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos - CDTUR</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header class="main-header">
         <nav class="main-nav">
             <a href="index.html" class="logo">
-                <span class="logo-text">CDTUR</span>
+                <img src="assets/gallery/logo.png" alt="CDTUR Logo" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="index.html#members">Membros</a></li>
                 <li><a href="contacto.html">Contactos</a></li>
             </ul>
+             <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
@@ -63,7 +71,6 @@
                 <p><strong>Email:</strong><br>
                 info@cdtur.co.mz</p>
 
-                <!-- You can embed a Google Map here -->
                 <div class="map-container">
                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31674.88127339791!2d40.66578505!3d-12.969193149999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x188e763155555555%3A0x82a5a3a2e3791168!2sWimbe%20Beach!5e0!3m2!1sen!2sus!4v1670000000000!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -79,6 +86,7 @@
         </div>
     </footer>
 
+    <!-- Your Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

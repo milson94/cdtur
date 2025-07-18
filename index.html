@@ -3,226 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDTUR - Associação de Hotelaria e Turismo de Cabo Delgado</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Galeria - CDTUR</title>
+    
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SimpleLightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header class="main-header">
         <nav class="main-nav">
             <a href="index.html" class="logo">
-                <!-- Add your logo image here -->
-                <!-- <img src="assets/logo/cdtur-logo.png" alt="CDTUR Logo"> -->
-                <span class="logo-text">CDTUR</span>
+                <img src="assets/gallery/logo.png" alt="CDTUR Logo" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="#members">Membros</a></li>
                 <li><a href="contacto.html">Contactos</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Bem-Vindo a Cabo Delgado</h1>
-                <p>O Seu Melhor Dia Começa Aqui</p>
-                <div class="hero-buttons">
-                    <a href="#members" class="btn btn-primary">Explore Agora</a>
-                    <a href="contacto.html" class="btn btn-secondary">Contacte-nos</a>
-                </div>
+
+        <!-- NEW "Quem Somos" Section -->
+        <section class="content-section about-intro">
+            <div class="about-intro-content">
+                <h2 class="about-intro-title">QUEM SOMOS</h2>
+                <p>Associação de Hotelaria e Turismo de Cabo Delgado, designada por <strong>CDTUR</strong>, é uma pessoa colectiva de direito privado, sem fins lucrativos, com personalidade jurídica, autónoma e com poderes administrativos, financeiros e patrimoniais.</p>
+                <p>Tem sua sede em Pemba, e por deliberação do conselho de direção, pode estabelecer representação social, onde e quando julgar conviniente. É membro fundador da <strong>FEMOTUR</strong> e membro efectivo da <strong>CTA</strong>.</p>
+                <p>Criada em 2006, neste momento com 67 membros inscritos, dos quais 24 efectivos e 2 aliados dos diversos distritos da província, composto por 3 órgãos sociais, sendo, mesa da Assembleia Geral, Conselho Fiscal e Conselho de Direção.</p>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-section content-section">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>CDTUR: A Voz do Turismo na Localização Mais Deslumbrante de Moçambique</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <ul>
-                        <li>✓ Promoção do Destino</li>
-                        <li>✓ Cultura e Tradição</li>
-                        <li>✓ Praias de Água Cristalina</li>
-                        <li>✓ Eventos e Música ao Vivo</li>
-                    </ul>
-                    <a href="sobre.html" class="btn btn-secondary">Sobre Nós</a>
-                </div>
-                <div class="about-images">
-                    <img src="assets/about/about-image-1.jpg" alt="Mulheres relaxando na piscina">
-                    <img src="assets/about/about-image-2.jpg" alt="Vista da praia com guarda-sóis">
-                </div>
+        <!-- Assembleia Geral Section -->
+        <section class="content-section bg-light">
+            <h2 class="gallery-title">Assembleia geral de eleição de novos órgão sociais da CDTUR</h2>
+            <p class="gallery-caption">Março 2025</p>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 17; i++) {
+                        const imgPath = `assets/gallery/assembleia_geral/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da Assembleia Geral ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
 
-        <!-- Members Section -->
-        <section id="members" class="members-section content-section bg-light">
-            <h2>Nossos Membros</h2>
-            <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <div class="members-cards">
-                <div class="card">
-                    <img src="assets/members/sun-lounger.jpg" alt="Hotelaria de Luxo">
-                    <h3>Hotéis & Resorts</h3>
-                    <p>Capacidade: Variada</p>
-                    <p>Serviços: Alojamento de luxo</p>
-                    <ul>
-                        <li>✓ Vistas para o mar</li>
-                        <li>✓ Piscinas privadas</li>
-                        <li>✓ Restaurantes gourmet</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
-                </div>
-                <div class="card">
-                    <img src="assets/members/lagoon-bed.jpg" alt="Lodge na Lagoa">
-                    <h3>Lodges & Bungalows</h3>
-                    <p>Capacidade: Exclusiva</p>
-                    <p>Serviços: Experiências únicas</p>
-                     <ul>
-                        <li>✓ Imersão na natureza</li>
-                        <li>✓ Conforto e privacidade</li>
-                        <li>✓ Actividades ecológicas</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
-                </div>
-                <div class="card">
-                    <img src="assets/members/sunset-booth.jpg" alt="Operadores Turísticos">
-                    <h3>Operadores Turísticos</h3>
-                    <p>Capacidade: Grupos e Individuais</p>
-                    <p>Serviços: Aventuras e passeios</p>
-                    <ul>
-                        <li>✓ Mergulho e Snorkeling</li>
-                        <li>✓ Passeios culturais</li>
-                        <li>✓ Safaris Marítimos</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Saber Mais</a>
-                </div>
+        <!-- Grupo dos membros e serviços -->
+        <section class="content-section">
+            <h2 class="gallery-title">Grupo dos membros e serviços</h2>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 21; i++) {
+                        const imgPath = `assets/gallery/grupo_membros_servicos/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto do grupo de membros ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
 
-        <!-- Highlights Section -->
-        <section class="highlights-section content-section">
-            <div class="highlights-grid">
-                <div class="highlight-item large-item" style="background-image: url('assets/highlights/highlight-dj.jpg');">
-                    <div class="highlight-content">
-                        <h4>Performance Especial</h4>
-                        <h3>Domingo Melhor com DJ Zacarias</h3>
-                        <a href="#" class="btn btn-secondary">Book Now</a>
-                    </div>
-                </div>
-                <div class="highlight-item small-item" style="background-image: url('assets/highlights/highlight-cocktails.jpg');">
-                    <div class="highlight-content">
-                        <h4>Ofertas Especiais</h4>
-                        <h3>Cocktails para Apreciar o Pôr do Sol</h3>
-                        <a href="#" class="btn btn-secondary-dark">Saber Mais</a>
-                    </div>
-                </div>
-                 <div class="highlight-item small-item" style="background-image: url('assets/highlights/highlight-tanning.jpg');">
-                    <div class="highlight-content">
-                        <h4>Ofertas Especiais</h4>
-                        <h3>Pacote de Bronzeamento ao Sol</h3>
-                        <a href="#" class="btn btn-secondary-dark">Saber Mais</a>
-                    </div>
-                </div>
-                <div class="highlight-item large-item" style="background-image: url('assets/highlights/highlight-happy-hour.jpg');">
-                     <div class="highlight-content">
-                        <h4>Ofertas Especiais</h4>
-                        <h3>Promo de Happy Hour</h3>
-                        <a href="#" class="btn btn-secondary">Saber Mais</a>
-                    </div>
-                </div>
+        <!-- Campanha da ANJE -->
+        <section class="content-section bg-light">
+            <h2 class="gallery-title">Participação na campanha da ANJE</h2>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 11; i++) {
+                        const imgPath = `assets/gallery/campanha_anje/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da campanha ANJE ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
 
-        <!-- Food Menu Section -->
-        <section class="food-menu-section content-section bg-light">
-            <h2>Comidas Típicas Famosas</h2>
-            <p class="section-intro">Descubra os sabores autênticos de Cabo Delgado, uma experiência gastronómica inesquecível.</p>
-            <div class="food-menu-columns">
-                <div class="menu-column">
-                    <h3>Entradas</h3>
-                    <div class="menu-item">
-                        <h4>Achar de Limão</h4>
-                        <span class="price">150 MZN</span>
-                    </div>
-                    <p>Conserva de limão picante, perfeita para abrir o apetite.</p>
-                     <div class="menu-item">
-                        <h4>Salada de Polvo</h4>
-                        <span class="price">350 MZN</span>
-                    </div>
-                    <p>Polvo tenro com pimentos, cebola e um toque de limão.</p>
-                </div>
-                <div class="menu-column">
-                    <h3>Pratos Principais</h3>
-                    <div class="menu-item">
-                        <h4>Matapa com Camarão</h4>
-                        <span class="price">650 MZN</span>
-                    </div>
-                    <p>Folhas de mandioca piladas com amendoim, leite de coco e camarão fresco. [6, 7]</p>
-                     <div class="menu-item">
-                        <h4>Peixe Grelhado à Moçambicana</h4>
-                        <span class="price">580 MZN</span>
-                    </div>
-                    <p>Peixe do dia marinado em limão e piri-piri, grelhado na perfeição. [6, 8]</p>
-                     <div class="menu-item">
-                        <h4>Caracata com Molho de Caranguejo</h4>
-                        <span class="price">550 MZN</span>
-                    </div>
-                    <p>Massa tradicional de mandioca servida com um rico molho de caranguejo. [9, 11]</p>
-                </div>
-                <div class="menu-column">
-                    <h3>Sobremesas</h3>
-                     <div class="menu-item">
-                        <h4>Bolo Polana</h4>
-                        <span class="price">250 MZN</span>
-                    </div>
-                    <p>Bolo rico e húmido feito com castanha de caju e batata. [6]</p>
-                     <div class="menu-item">
-                        <h4>Mousse de Manga</h4>
-                        <span class="price">220 MZN</span>
-                    </div>
-                    <p>Mousse leve e refrescante feita com mangas locais.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn btn-secondary">Ver Todo o Menu</a>
+        <!-- Eleicoes da CTA -->
+        <section class="content-section">
+            <h2 class="gallery-title">Participação nas eleições da CTA</h2>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 26; i++) {
+                        const imgPath = `assets/gallery/eleicoes_cta/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto das eleições da CTA ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
-
-         <!-- Blog Section -->
-        <section class="blog-section content-section">
-            <h2>Blog & Artigos</h2>
-             <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <div class="blog-cards">
-                <div class="blog-card">
-                    <img src="assets/blog/blog-activities.jpg" alt="Pessoas se divertindo na praia">
-                    <div class="blog-card-content">
-                        <span>Insight</span>
-                        <h3>5 Actividades Imperdíveis em Cabo Delgado</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod magna aliqua....</p>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <img src="assets/blog/blog-makonde.jpg" alt="Arte da cultura Makonde">
-                     <div class="blog-card-content">
-                        <span>Cultura</span>
-                        <h3>A Riqueza da Cultura Makonde</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod magna aliqua....</p>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <img src="assets/blog/blog-diving.jpg" alt="Mulher relaxando na piscina">
-                     <div class="blog-card-content">
-                        <span>Aventura</span>
-                        <h3>Mergulho nas Quirimbas: Um Paraíso Subaquático</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod magna aliqua....</p>
-                    </div>
-                </div>
+        
+        <!-- Sarima hotel Pemba -->
+        <section class="content-section bg-light">
+            <h2 class="gallery-title">Sarima hotel Pemba</h2>
+            <div class="image-gallery-grid">
+                 <script>
+                    for (let i = 1; i <= 15; i++) {
+                        const imgPath = `assets/gallery/sarima_hotel/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto do Sarima Hotel Pemba ${i}" loading="lazy"></a>`);
+                    }
+                </script>
+            </div>
+        </section>
+        
+        <!-- Tomada de posse CDTUR -->
+        <section class="content-section">
+            <h2 class="gallery-title">Tomada de posse CDTUR</h2>
+            <div class="image-gallery-grid">
+                <script>
+                    // UPDATED: Loop now only goes to 2 images
+                    for (let i = 1; i <= 2; i++) {
+                        const imgPath = `assets/gallery/tomada_posse/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da tomada de posse CDTUR ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
 
@@ -231,12 +133,15 @@
     <footer class="main-footer">
         <p>© 2025 CDTUR - Associação de Hotelaria e Turismo de Cabo Delgado. Todos os direitos reservados.</p>
         <div class="social-links">
-            <!-- Add links to your social media -->
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
         </div>
     </footer>
 
+    <!-- SimpleLightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    
+    <!-- Your Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
