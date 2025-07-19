@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Lightbox Functionality ---
+    // This targets all links within any element that has the class .image-gallery-grid
     const galleries = document.querySelectorAll('.image-gallery-grid a');
     
     if (galleries.length > 0) {
