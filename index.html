@@ -124,8 +124,12 @@
         <!-- Folhetos Section (Title Removed) -->
         <section class="content-section bg-light">
             <div class="image-gallery-grid folhetos-grid">
-                <a href="assets/gallery/folhetos/cdtur.png" class="gallery-item"><img src="assets/gallery/folhetos/cdtur.png" alt="Folheto CDTUR" loading="lazy"></a>
-                <a href="assets/gallery/folhetos/femotur.png" class="gallery-item"><img src="assets/gallery/folhetos/femotur.png" alt="Folheto FEMOTUR" loading="lazy"></a>
+                <script>
+                    for (let i = 1; i <= 3; i++) {
+                        const imgPath = `assets/gallery/folhetos/image_${String(i).padStart(2, '0')}.png`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Folheto ${i}" loading="lazy"></a>`);
+                    }
+                </script>
             </div>
         </section>
 
@@ -185,7 +189,7 @@
             <h3 class="sub-gallery-title">Participação na Feira</h3>
             <div class="image-gallery-grid">
                 <script>
-                    for (let i = 1; i <= 17; i++) {
+                    for (let i = 1; i <= 20; i++) {
                         const imgPath = `assets/gallery/participacoes/participacao_feira/image_${String(i).padStart(2, '0')}.jpg`;
                         document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da participação na feira ${i}" loading="lazy"></a>`);
                     }
@@ -198,6 +202,26 @@
                     for (let i = 1; i <= 11; i++) {
                         const imgPath = `assets/gallery/participacoes/campanha_anje/image_${String(i).padStart(2, '0')}.jpg`;
                         document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da campanha da ANJE ${i}" loading="lazy"></a>`);
+                    }
+                </script>
+            </div>
+
+            <h3 class="sub-gallery-title">Sukiri</h3>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 1; i++) {
+                        const imgPath = `assets/gallery/participacoes/sukiri/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da participação Sukiri ${i}" loading="lazy"></a>`);
+                    }
+                </script>
+            </div>
+
+            <h3 class="sub-gallery-title">Fikani</h3>
+            <div class="image-gallery-grid">
+                <script>
+                    for (let i = 1; i <= 19; i++) {
+                        const imgPath = `assets/gallery/participacoes/fikani/image_${String(i).padStart(2, '0')}.jpg`;
+                        document.write(`<a href="${imgPath}" class="gallery-item"><img src="${imgPath}" alt="Foto da participação em Fikani ${i}" loading="lazy"></a>`);
                     }
                 </script>
             </div>
